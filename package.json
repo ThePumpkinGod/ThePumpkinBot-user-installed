@@ -1,0 +1,24 @@
+{
+  "name": "pumpkin-bot",
+  "version": "7.0.0",
+  "description": "the 7th edition of pumpkin bot!",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/rest": "^2.4.0",
+    "axios": "^1.7.7",
+    "discord.js": "^14.16.1",
+    "dotenv": "^16.4.5",
+    "npm-check-updates": "^17.1.1",
+    "openai": "^4.57.1",
+    "random-reddit": "^2.0.3",
+    "request": "^2.88.2",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "addcommands": "node deploy-commands.js",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
