@@ -22,12 +22,12 @@ module.exports = {
 
       const openai = new OpenAI({
         apiKey: process.env.aiToken,
-        baseURL: 'https://api.theb.ai/v1'
+        baseURL: 'https://openrouter.ai/api/v1'
       });
 
       async function fetchChatCompletion() {
         const result = await openai.chat.completions.create({
-          model: 'theb-ai',
+          model: 'openai/gpt-4o',
           stream: false,
           model_params: {
             temperature: 0.5
