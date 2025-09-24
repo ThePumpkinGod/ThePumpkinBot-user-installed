@@ -27,7 +27,7 @@ module.exports = {
 
       async function fetchChatCompletion() {
         const result = await openai.chat.completions.create({
-          model: 'openai/gpt-4o',
+          model: 'openai/gpt-5-mini',
           stream: false,
           model_params: {
             temperature: 0.5
