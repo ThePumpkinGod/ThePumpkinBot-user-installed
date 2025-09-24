@@ -3,16 +3,16 @@ const { OpenAI } = require("openai");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('ask')
-    .setDescription('ask pumpkin bot something!')
+  .setName('ask')
+  .setDescription('ask pumpkin bot something!')
 
-    .setContexts(1, 2, 0)
-    .setIntegrationTypes(1)
+  .setContexts(1, 2, 0)
+  .setIntegrationTypes(1)
 
-    .addStringOption(option =>
-      option.setName('input')
-        .setDescription('what do you want to ask?')
-        .setRequired(true)),
+  .addStringOption(option =>
+  option.setName('input')
+  .setDescription('what do you want to ask?')
+  .setRequired(true)),
 
   async execute(interaction) {
     if (interaction.user.id === '216862330724548608') {
@@ -27,13 +27,13 @@ module.exports = {
 
       async function fetchChatCompletion() {
         const result = await openai.chat.completions.create({
-          model: 'openai/gpt-5-mini',
+          model: 'openai/gpt-5-mini:online',
           stream: false,
           model_params: {
             temperature: 0.5
           },
           messages: [
-            { role: 'system', content: 'You are a helpful assistant named "Pumpkin Bot", all your message will be sent in discord so please use the discord formatting like every other discord user would!' },
+            { role: 'system', content: 'You are a helpful assistant named "Pumpkin Bot", all your message will be sent in discord so please use the discord formatting like every other discord user would!, dont pass 2000 letters as its the max letters for an discord message!' },
             { role: 'user', content: question }
           ],
         });
