@@ -27,7 +27,7 @@ module.exports = {
 
       async function fetchChatCompletion() {
         const result = await openai.chat.completions.create({
-          model: 'openai/gpt-5-mini:online',
+          model: '~deepseek/deepseek-flash-latest',
           stream: false,
           model_params: {
             temperature: 0.5
